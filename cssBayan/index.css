@@ -44,20 +44,21 @@ body {
 
 .list__item {
   border-top: 0.2rem solid;
-  margin-bottom: 1rem;
 }
 
 .list__item-label {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 1rem 0;
+  padding: 1rem 0;
   font-style: italic;
 }
 
 .list__item-image {
-  margin-top: 1rem;
   width: 100%;
+  scale: 0.8;
+  height: 0;
+  transition: 0.5s ease-in-out;
 }
 
 .accordion__title {
@@ -68,4 +69,17 @@ body {
   width: 100%;
   height: 5rem;
   background-color: cadetblue;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+  .accordion__list:hover, .list__item-label {
+    cursor: pointer;
+  }
+
+  .list__item-input:hover ~ .list__item-image {
+    margin-top: 1rem;
+    height: auto;
+    scale: 1;
+  }
 }
