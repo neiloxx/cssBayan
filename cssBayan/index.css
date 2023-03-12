@@ -70,7 +70,7 @@ body {
   margin-top: 1rem;
   max-height: 100vh;
   scale: 1;
-  transition: 1s ease-in-out;
+  transition: max-height 1s ease-in-out;
 }
 
 .accordion__list input {
@@ -81,11 +81,13 @@ body {
   background-size: contain;
   transform: rotate(45deg);
   transition: transform 0.1s ease-in;
+  visibility: hidden;
   order: 2;
 }
 
 .accordion__list input:checked {
   transform: rotate(0deg);
+  visibility: visible;
 }
 
 .list__item-label-text {
@@ -110,6 +112,10 @@ body {
 
   .accordion__list input:hover {
     transform: rotate(0deg);
+  }
+
+  .accordion__list:hover input {
+    visibility: visible;
   }
 
   .accordion__list:hover .list__item-label-text {
