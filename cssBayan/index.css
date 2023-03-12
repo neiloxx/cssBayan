@@ -25,7 +25,6 @@ body {
   flex: 1;
   max-width: 90vw;
   width: 100%;
-  background-color: bisque;
 }
 
 .accordion {
@@ -34,14 +33,18 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
+  color: #0666b4;
+  font-weight: bold;
 }
 
 .accordion__title {
   text-transform: uppercase;
+  color: cadetblue;
 }
 
 .list {
   padding: 1rem;
+  margin: 0;
   list-style: none;
   width: 100%;
 }
@@ -59,6 +62,8 @@ body {
 }
 
 .list__item-image {
+  display: flex;
+  justify-content: center;
   width: 100%;
   scale: 0.8;
   max-height: 0;
@@ -66,9 +71,15 @@ body {
   order: 3;
 }
 
+.list__item-image img {
+  max-width: 20rem;
+  width: 100%;
+  padding: 0 1em;
+}
+
 .list__item-input:checked ~ .list__item-image {
   margin-top: 1rem;
-  max-height: 100vh;
+  max-height: 50rem;
   scale: 1;
   transition: max-height 1s ease-in-out;
 }
@@ -95,7 +106,7 @@ body {
 }
 
 .list__item-input:checked ~ .list__item-label-text {
-  color: blueviolet;
+  color: #000000;
 }
 
 .footer {
@@ -119,12 +130,56 @@ body {
   }
 
   .accordion__list:hover .list__item-label-text {
-    color: blueviolet;
+    color: #000000;
   }
 
   .list__item-input:hover ~ .list__item-image {
     margin-top: 1rem;
-    max-height: 100vh;
+    max-height: 50rem;
     scale: 1;
+  }
+}
+
+@media (min-width: 600px) {
+  .accordion {
+    max-width: 50rem;
+    font-size: 2rem;
+  }
+
+  .accordion__list input {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .list__item-image img {
+    max-width: 50rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .accordion {
+    max-width: 70rem;
+    font-size: 2.5rem;
+  }
+
+  .accordion__list input {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .list__item-image img {
+    max-width: 60rem;
+  }
+}
+
+@media (min-width: 1900px) {
+  .accordion {
+    max-width: 80rem;
+    font-size: 3rem;
+  }
+
+  .accordion__list input {
+    width: 3rem;
+    height: 3rem;
   }
 }
