@@ -36,6 +36,10 @@ body {
   width: 100%;
 }
 
+.accordion__title {
+  text-transform: uppercase;
+}
+
 .list {
   padding: 1rem;
   list-style: none;
@@ -59,6 +63,7 @@ body {
   scale: 0.8;
   max-height: 0;
   transition: 0.7s ease-in-out;
+  order: 3;
 }
 
 .list__item-input:checked ~ .list__item-image {
@@ -68,8 +73,27 @@ body {
   transition: 1s ease-in-out;
 }
 
-.accordion__title {
-  text-transform: uppercase;
+.accordion__list input {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  background: url("./assets/svg/cross.svg") center center;
+  background-size: contain;
+  transform: rotate(45deg);
+  transition: transform 0.1s ease-in;
+  order: 2;
+}
+
+.accordion__list input:checked {
+  transform: rotate(0deg);
+}
+
+.list__item-label-text {
+  order: 1;
+}
+
+.list__item-input:checked ~ .list__item-label-text {
+  color: blueviolet;
 }
 
 .footer {
@@ -80,8 +104,16 @@ body {
 
 
 @media (hover: hover) and (pointer: fine) {
-  .accordion__list:hover, .list__item-label {
+  .accordion__list:hover, .list__item-label, input  {
     cursor: pointer;
+  }
+
+  .accordion__list input:hover {
+    transform: rotate(0deg);
+  }
+
+  .accordion__list:hover .list__item-label-text {
+    color: blueviolet;
   }
 
   .list__item-input:hover ~ .list__item-image {
