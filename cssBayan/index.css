@@ -98,7 +98,6 @@ body {
 
 .accordion__list input:checked {
   transform: rotate(0deg);
-  visibility: visible;
 }
 
 .list__item-label-text {
